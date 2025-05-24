@@ -18,10 +18,8 @@ void Print2DArrayVector(vector<vector<int>> &arr, int k)
     }
 }
 
-void rotatektimes(vector<vector<int>> &matrix, int k)
+void rotatektimes(vector<vector<int>> &matrix, int k, int n)
 {
-    int n = matrix.size();
-
     for (int m = 0; m < k; m++)
     {
         // Reverse Col
@@ -58,12 +56,13 @@ int main()
         {13, 14, 15, 16},
     };
 
+    int n = matrix.size();
     int k;
     cout << "Enter How Many time Matrix Rotate? : ";
     cin >> k;
 
-    k = k % 4;
-    rotatektimes(matrix, k);
+    k = k % n;
+    rotatektimes(matrix, k, n);
     return 0;
 }
 
